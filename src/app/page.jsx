@@ -64,7 +64,7 @@ export default function LandingPage() {
               <div className="relative border-3 border-transparent  p-6 text-center overflow-hidden"
                 >
                 <div className="relative z-10">
-                  <div className="text-5xl mb-3 animate-bounce text-pink-200"><i class="ri-zzz-line"></i></div>
+                  <div className="text-5xl mb-3 animate-bounce text-pink-200"><i className="ri-zzz-line"></i></div>
                   <h2 className="text-3xl md:text-4xl font-bold bg-linear-to-r from-pink-300 via-purple-300 to-pink-300 bg-clip-text text-transparent mb-2">
                     Tired? Let's Take a Break!
                   </h2>
