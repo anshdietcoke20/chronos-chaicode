@@ -33,33 +33,12 @@ export const corsair = createCorsair({
             clientId: process.env.GITHUB_CLIENT_ID,
             clientSecret: process.env.GITHUB_CLIENT_SECRET,
         },
-    webhookHooks: {
-        starCreated: {
-            after: async ( result) => {
-                console.log(`⭐ ${result?.data?.sender?.login} starred ${result?.data?.repository?.full_name}`);
-            },
-        },
-        pullRequestOpened: {
-            after: async (result) => {
-                const pr = result?.data?.pull_request;
-                console.log(`PR opened: "${pr?.title}" by ${pr?.user?.login}`);
-            },
-        },
-        push: {
-            after: async (result) => {
-                const branch = result?.data?.ref.replace('refs/heads/', '');
-                console.log(`${result?.data?.commits?.length} commit(s) pushed to ${branch}`);
-            },
-        },
-    },
 })],
     database: pool,
     kek: process.env.CORSAIR_KEK,
     multiTenancy: true,
 });
 
-const result = await pool.query("SELECT NOW()");
-console.log(result.rows)
 
 export {pool};
 
